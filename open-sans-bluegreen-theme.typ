@@ -1,26 +1,26 @@
 #import "polylux/src/polylux.typ": *
 #import "polylux/src/toolbox/toolbox.typ"
 
-#let GoogleBlue = rgb(66, 133, 244)
-#let GoogleRed = rgb(234, 67, 53)
-#let GoogleYellow = rgb(251, 188, 5)
-#let GoogleGreen = rgb(52, 168, 83)
-#let GoogleDark = rgb(32, 33, 36)
-#let GoogleGray = rgb(95, 99, 104)
-#let GoogleLightGray = rgb(241, 243, 244)
+#let GoogleBlue = rgb("#1a73e8")
+#let GoogleRed = rgb("#0f9d8a")
+#let GoogleYellow = rgb("#66b44e")
+#let GoogleGreen = rgb("#00897b")
+#let GoogleDark = rgb("#102a43")
+#let GoogleGray = rgb("#4b6575")
+#let GoogleLightGray = rgb("#eef7f8")
 
 #let google-gradient = gradient.linear(
   angle: 0deg,
-  rgb("#4285f4"), 
-  rgb("#b181db"), 
-  rgb("#e04d50"), 
-  rgb("#ff902a"), 
-  rgb("#debe0f"), 
-  rgb("#5fb641"), 
-  rgb("#2eaca0")
+  rgb("#1a73e8"),
+  rgb("#00a3c4"),
+  rgb("#00a884"),
+  rgb("#43a047"),
+  rgb("#7cb342"),
+  rgb("#26a69a"),
+  rgb("#1565c0")
 )
 
-#let googley-theme(
+#let open-sans-bluegreen-theme(
   aspect-ratio: "16-9",
   short-author: none,
   short-title: none,
@@ -48,7 +48,7 @@
     ]
   )
 
-  set text(size: 22pt, font: "Google Sans", fill: GoogleDark, tracking: -0.01em)
+  set text(size: 22pt, font: "Open Sans", fill: GoogleDark, tracking: -0.01em)
   set par(leading: 0.45em)
   set list(marker: text(fill: GoogleBlue)[•], spacing: 1.2em)
 
@@ -92,7 +92,7 @@
     header: [
       #if title != none {
         place(top + left, dy: 1cm, dx: 0cm)[
-          #text(size: 36pt, weight: 500, fill: rgb(66, 133, 244))[#title]
+          #text(size: 36pt, weight: 500, fill: GoogleBlue)[#title]
         ]
       }
     ]
@@ -103,7 +103,7 @@
   ]
 ]
 
-#let googley-card(title: none, accent: rgb(66, 133, 244), height: auto, body) = {
+#let googley-card(title: none, accent: GoogleBlue, height: auto, body) = {
   block(
     width: 100%,
     height: height,
@@ -121,3 +121,5 @@
     #body
   ]
 }
+
+#let googley-theme = open-sans-bluegreen-theme
